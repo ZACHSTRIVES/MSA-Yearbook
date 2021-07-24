@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using HotChocolate.Types;
 
-namespace MSAYearbook.Data
+namespace MSAYearbook.Extensions
 {
     public static class ObjectFieldDescriptorExtensions
     {

@@ -4,7 +4,7 @@ using HotChocolate;
 using HotChocolate.Types;
 using MSAYearbook.Data;
 using MSAYearbook.Models;
-using MSAYearbook.GraphQL.Project;
+using MSAYearbook.GraphQL.Projects;
 
 namespace MSAYearbook.GraphQL.Comments
 {
@@ -17,13 +17,13 @@ namespace MSAYearbook.GraphQL.Comments
 
             descriptor
                 .Field(s => s.Project)
-                .ResolveWith<Resolvers>(r => r.GetProject(default!, default!))
+                .ResolveWith<Resolvers>(r => r.GetProject(default!, default!,default))
                 .UseDbContext<AppDbContext>()
                 .Type<NonNullType<CommentType>>();
 
             descriptor
                 .Field(s => s.Student)
-                .ResolveWith<Resolvers>(r => r.GetStudent(default!, default!))
+                .ResolveWith<Resolvers>(r => r.GetStudent(default!, default!,default))
                 .UseDbContext<AppDbContext>()
                 .Type<NonNullType<CommentType>>();
 

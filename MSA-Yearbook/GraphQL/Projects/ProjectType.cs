@@ -45,7 +45,7 @@ namespace MSAYearbook.GraphQL.Projects
             public async Task<Student> GetStudent(Project project, [ScopedService] AppDbContext context,
                 CancellationToken cancellationToken)
             {
-                return await context.Students.FindAsync(new object[] { comment.StudentId }, cancellationToken);
+                return await context.Students.FindAsync(new object[] { project.StudentId }, cancellationToken);
             }
 
             public async Task<IEnumerable<Comment>> GetComments(Project project, [ScopedService] AppDbContext context,

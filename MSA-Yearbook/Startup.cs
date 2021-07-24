@@ -12,6 +12,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using MSAYearbook.Data;
+using MSAYearbook.GraphQL.Comments;
+using MSAYearbook.GraphQL.Projects;
 using MSAYearbook.GraphQL.Students;
 
 namespace MSA_Yearbook
@@ -32,7 +34,11 @@ namespace MSA_Yearbook
             services
                 .AddGraphQLServer()
                 .AddQueryType(d => d.Name("Query"))
-                    .AddTypeExtension<StudentQueries>();
+                    .AddTypeExtension<ProjectQueries>()
+                    .AddTypeExtension<StudentQueries>()
+                    .AddType<ProjectType>()
+                    .AddType<StudentType>()
+                    .AddType<CommentType>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
