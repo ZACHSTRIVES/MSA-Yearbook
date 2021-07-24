@@ -1,0 +1,49 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>MSA_Yearbook</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Microsoft.EntityFrameworkCore" />
+    <None Remove="Microsoft.EntityFrameworkCore.SqlServer" />
+    <None Remove="Microsoft.EntityFrameworkCore.Tools" />
+    <None Remove="HotChocolate.AspNetCore" />
+    <None Remove="HotChocolate.Data" />
+    <None Remove="HotChocolate.Data.EntityFramework" />
+    <None Remove="HotChocolate.AspNetCore.Authorization" />
+    <None Remove="Microsoft.AspNetCore.Authentication.JwtBearer" />
+    <None Remove="Octokit" />
+    <None Remove="Models\" />
+    <None Remove="Data\" />
+    <None Remove="GraphQL\" />
+    <None Remove="GraphQL\Student\" />
+    <None Remove="GraphQL\Project\" />
+    <None Remove="GraphQL\Comment\" />
+    <None Remove="Extensions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.8">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="HotChocolate.AspNetCore" Version="11.3.2" />
+    <PackageReference Include="HotChocolate.Data" Version="11.3.2" />
+    <PackageReference Include="HotChocolate.Data.EntityFramework" Version="11.3.2" />
+    <PackageReference Include="HotChocolate.AspNetCore.Authorization" Version="11.3.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.8" />
+    <PackageReference Include="Octokit" Version="0.50.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="Data\" />
+    <Folder Include="GraphQL\" />
+    <Folder Include="GraphQL\Student\" />
+    <Folder Include="GraphQL\Projects\" />
+    <Folder Include="GraphQL\Comments\" />
+    <Folder Include="Extensions\" />
+  </ItemGroup>
+</Project>
