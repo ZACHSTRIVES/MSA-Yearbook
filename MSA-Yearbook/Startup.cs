@@ -25,7 +25,7 @@ namespace MSA_Yearbook
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
+        public static IConfiguration Configuration { get; private set; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -34,11 +34,15 @@ namespace MSA_Yearbook
             services
                 .AddGraphQLServer()
                 .AddQueryType(d => d.Name("Query"))
-                    .AddTypeExtension<ProjectQueries>()
-                    .AddTypeExtension<StudentQueries>()
-                    .AddType<ProjectType>()
-                    .AddType<StudentType>()
-                    .AddType<CommentType>();
+                        .AddTypeExtension<ProjectQueries>()
+                        .AddTypeExtension<StudentQueries>()
+                .AddMutationType(d => d.Name("Mutation"))
+                        .AddTypeExtension<StudentMutations>()
+                        .AddTypeExtension<ProjectMutations>()
+                        .AddTypeExtension<CommentMutations>()
+                .AddType<ProjectType>()
+                .AddType<StudentType>()
+                .AddType<CommentType>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
